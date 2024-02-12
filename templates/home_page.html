@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <title>Home Page</title>
+</head>
+
+<style>
+    #bg{
+        background-repeat: no-repeat;
+        background-size: 1800px 900px;
+        background-position: top;
+        background-attachment: fixed;
+    }
+
+
+    body {
+        background-image: rgba(250, 247, 70, 0.781);
+        font-family: Arial, sans-serif;
+    }
+
+    .container-content {
+        max-width: 800px;
+        margin: auto;
+        margin-top: 50px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    h2 {
+        color: #007bff;
+    }
+
+    p {
+        color: #333;
+    }
+</style>
+
+<body id="bg" style="background-image: url('{% static 'images/pastel.jpeg' %}');">
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(233, 175, 51);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'login_page' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup_page' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about_page' %}">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page Content -->
+        <h2><center>Welcome to Our Home Page</center></h2>
+        <br><br><br><br>
+       
+        <!-- Add more content about your home page here -->
+        <div class="card mx-auto" style="width: 25%; background-color: rgb(231, 153, 80);">
+              <h4 class="card-title text-center">Register</h4>
+              <h6 class="card-title text-center" style="background-color: rgb(223, 156, 93);">Click the button below to register.</h6>
+              <a href= "{% url 'signup' %}" class="btn btn-outline-primary">Register</a>
+            </div>
+          
+
+        <!-- <div class="row mt-5 col-md-6">
+            <div class="col-md-6">
+                <div class="col d-flex justify-content-center">
+                <div class="card text-center">
+  
+                <div class="card">
+                    <div class="card-body bg-primary">
+                        <h5 class="card-title">Register</h5>
+                        <p class="card-text">Click the button below to register.</p>
+                        <a href="{% url 'signup' %}" class="btn btn-outline-dark">Register</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+        </div>
+        </div> -->
+        <br><br><br><br><br><br><br><br>
+        <footer class=" text-white text-center text-lg-start" style="background-color: rgb(128, 61, 7);">
+            <!-- Grid container -->
+            <div class="container p-4">
+              <!--Grid row-->
+              <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                  <h5 class="text-uppercase">altos technology</h5>
+          
+                  <p>
+                    ALTOS Technologies is a leading software and web development company based in Kochi, Kerala.
+                    with the latest technology and framework, we continuously strive to improve ideas as a team of young, 
+                    innovative thinkers. 
+                  </p>
+                </div>
+                <!--Grid column-->
+          
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                  <h5 class="text-uppercase">Links</h5>
+          
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="{% url 'login_page' %}" class="text-white">Login</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'about_page' %}" class="text-white">About</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'signup' %}" class="text-white">Register</a>
+                    </li>
+                    <li>
+                  </ul>
+                </div>
+                <!--Grid column-->
+          
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                  <h5 class="text-uppercase mb-0">contacts</h5>
+          
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#!" class="text-white">altos@gmail.com</a>
+                    </li>
+                    <li>
+                      <a href="#!" class="text-white">7789543203</a>
+                    </li>
+                    <li>
+                  </ul>
+                </div>
+                <!--Grid column-->
+              </div>
+              <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+          
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2020 Copyright:
+              <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+</body>
+
+</html>

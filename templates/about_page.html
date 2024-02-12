@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <title>About Us</title>
+</head>
+
+<style>
+    body {
+        background-color: rgb(231, 220, 204);
+    }
+
+    .container-about {
+        max-width: 800px;
+        margin: auto;
+        margin-top: 50px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(233, 175, 51);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home_page' %}">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'login_page' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup_page' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about_page' %}">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <center>
+        <div>
+            {% for message in messages %}
+            <h5><div class="alert alert-danger mt-5" style="width: 50%;">
+                {{message}}
+        
+            </div></h5>
+            {% endfor %}
+        </div>
+    </center>
+
+    <!-- About Us Content -->
+    <div class="container-about mt-4">
+        <h2>About Us</h2>
+        <p>Welcome to our website! This is a brief description of our organization or project.</p>
+        <p>USERNAME :{{user.username}}</p>
+        <p>EMAIL ID :{{user.email}}</p>
+        <p>FIRST NAME :{{user.first_name}} {{user.last_name}}</p>
+        <p>USER ID :{{user.id}}</p>
+        
+        <!-- Add more content about your organization or project here -->
+        <br>
+        <a href="{% url 'logout' %}"><button class="btn btn-danger">Logout</button></a>
+    </div>
+
+    <footer class=" text-white text-center text-lg-start" style="background-color: rgb(128, 61, 7);">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+              <h5 class="text-uppercase">altos technology</h5>
+      
+              <p>
+                ALTOS Technologies is a leading software and web development company based in Kochi, Kerala.
+                with the latest technology and framework, we continuously strive to improve ideas as a team of young, 
+                innovative thinkers. 
+              </p>
+            </div>
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Links</h5>
+      
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="{% url 'login_page' %}" class="text-white">Login</a>
+                </li>
+                <li>
+                  <a href="{% url 'about_page' %}" class="text-white">About</a>
+                </li>
+                <li>
+                  <a href="{% url 'signup' %}" class="text-white">Register</a>
+                </li>
+                <li>
+              </ul>
+            </div>
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-0">contacts</h5>
+      
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!" class="text-white">altos@gmail.com</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">7789543203</a>
+                </li>
+                <li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+
+</body>
+
+</html>
